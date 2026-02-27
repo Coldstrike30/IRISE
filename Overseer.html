@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>I-RISE Review</title>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="overseer.css" />
+</head>
+
+<body>
+  <div class="layout">
+   
+    <div class="sidebar">
+      <div class="sidebar__brand">
+        <div class="brand__mark">
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+        <div class="brand__text">
+          <div class="brand__name">Snapnet</div>
+          <div class="brand__sub">I-RISE</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="nav__item is-active" type="button" data-page="home">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </button>
+
+        <button class="nav__item is-disabled" type="button" data-page="submissions" disabled>
+          <i class="fa-solid fa-file-lines"></i>
+          <span>Submissions</span>
+          <span class="pill">Inactive</span>
+        </button>
+      </nav>
+
+      <div class="sidebar__spacer"></div>
+
+      <button class="logout" type="button">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Log Out
+      </button>
+    </div>
+
+   
+    <section class="content">
+     
+      <header class="topbar">
+        <div class="topbar__inner">
+          <h1 class="topbar__title">I-RISE Review</h1>
+          <div class="topbar__right">Welcome <strong>[USER]</strong></div>
+        </div>
+      </header>
+
+      <main class="main">
+       
+        <section class="page is-visible" id="page-home" aria-label="Home Overview">
+          <div class="page-head">
+            <h2 class="page-title">Welcome, Admin!</h2>
+            <p class="page-sub">Here's an overview of the value case activity.</p>
+          </div>
+
+        
+          <div class="overview-grid">
+            <article class="card overview-card">
+              <div class="overview-card__left">
+                <div class="overview-card__label">Total Submissions</div>
+                <div class="overview-card__value">128</div>
+              </div>
+              <div class="overview-card__icon" aria-hidden="true">
+                <i class="fa-solid fa-inbox"></i>
+              </div>
+            </article>
+
+            <article class="card overview-card">
+              <div class="overview-card__left">
+                <div class="overview-card__label">Top Team Champions</div>
+                <div class="overview-card__valueText">Sales Team</div>
+                <div class="overview-card__meta">78 Points</div>
+              </div>
+              <div class="overview-card__icon" aria-hidden="true">
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+            </article>
+
+            <article class="card overview-card">
+              <div class="overview-card__left">
+                <div class="overview-card__label">Leading Core Value</div>
+                <div class="overview-card__valueText">Integrity</div>
+              </div>
+              <div class="overview-card__icon" aria-hidden="true">
+                <i class="fa-solid fa-heart"></i>
+              </div>
+            </article>
+
+            <article class="card overview-card">
+              <div class="overview-card__left">
+                <div class="overview-card__label">Highest Scoring Submission</div>
+                <div class="overview-card__valueText">Emily Roberts</div>
+              </div>
+              <div class="overview-card__icon" aria-hidden="true">
+                <i class="fa-solid fa-award"></i>
+              </div>
+            </article>
+          </div>
+
+          <!-- BLUE HOME: middle row (Team Performance + Top Team Champions panel) -->
+          <div class="two-col">
+            <section class="card panel">
+              <div class="panel__head">
+                <div class="panel__title">Team Performance</div>
+              </div>
+
+              <div class="bars">
+                <div class="bar">
+                  <div class="bar__row">
+                    <span class="bar__label">Sales Team</span>
+                    <span class="bar__num">78</span>
+                  </div>
+                  <div class="bar__track"><div class="bar__fill" style="width:78%"></div></div>
+                </div>
+
+                <div class="bar">
+                  <div class="bar__row">
+                    <span class="bar__label">Marketing Team</span>
+                    <span class="bar__num">65</span>
+                  </div>
+                  <div class="bar__track"><div class="bar__fill" style="width:65%"></div></div>
+                </div>
+
+                <div class="bar">
+                  <div class="bar__row">
+                    <span class="bar__label">Tech Team</span>
+                    <span class="bar__num">42</span>
+                  </div>
+                  <div class="bar__track"><div class="bar__fill" style="width:42%"></div></div>
+                </div>
+
+                <div class="bar">
+                  <div class="bar__row">
+                    <span class="bar__label">HR Team</span>
+                    <span class="bar__num">37</span>
+                  </div>
+                  <div class="bar__track"><div class="bar__fill" style="width:37%"></div></div>
+                </div>
+              </div>
+            </section>
+
+            <section class="card panel">
+              <div class="panel__head">
+                <div class="panel__title">Top Team Champions</div>
+              </div>
+
+              <div class="champion-top">
+                <div class="champion-top__left">
+                  <i class="fa-solid fa-trophy"></i>
+                  <div>
+                    <div class="champion-top__name">Sales Team</div>
+                    <div class="champion-top__sub">Sales Team</div>
+                  </div>
+                </div>
+                <div class="champion-top__right">
+                  <div class="champion-top__score">78</div>
+                  <div class="champion-top__meta">Points</div>
+                </div>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="champion-meta">
+                <div class="champion-meta__row">
+                  <div class="champion-meta__label">
+                    <i class="fa-solid fa-bullseye"></i> Customer Focus
+                  </div>
+                  <div class="champion-meta__value">15</div>
+                </div>
+
+                <div class="champion-meta__row">
+                  <div class="champion-meta__label">
+                    <i class="fa-solid fa-heart"></i> Leading Core Value
+                  </div>
+                  <div class="champion-meta__badge">Score: 9</div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- BLUE HOME: bottom row (it repeats panels) -->
+          <div class="two-col">
+  <!-- LEFT: Team Champions (Team + Person) -->
+  
+    <section class="card panel panel--fixed">
+  <div class="panel__head">
+    <div class="panel__title">Team Champions</div>
+  </div>
+
+  <!-- NEW WRAPPER (this is what scrolls) -->
+  <div class="panel__body panel__body--scroll">
+    <div class="rank-list">
+      <div class="rank-item">
+        <div class="rank-item__left">
+          <i class="fa-solid fa-user-tie"></i>
+          <div>
+            <div class="rank-item__name">Sales</div>
+            <div class="rank-item__sub">Chinedu Okeke</div>
+          </div>
+        </div>
+        <div class="rank-item__right">78</div>
+      </div>
+
+      <div class="rank-item">
+        <div class="rank-item__left">
+          <i class="fa-solid fa-user-tie"></i>
+          <div>
+            <div class="rank-item__name">Project management</div>
+            <div class="rank-item__sub">Amina Bello</div>
+          </div>
+        </div>
+        <div class="rank-item__right">65</div>
+      </div>
+
+      <div class="rank-item">
+        <div class="rank-item__left">
+          <i class="fa-solid fa-user-tie"></i>
+          <div>
+            <div class="rank-item__name">Front-end</div>
+            <div class="rank-item__sub">Tunde Adeyemi</div>
+          </div>
+        </div>
+        <div class="rank-item__right">42</div>
+      </div>
+
+      <div class="rank-item">
+        <div class="rank-item__left">
+          <i class="fa-solid fa-user-tie"></i>
+          <div>
+            <div class="rank-item__name">Back end</div>
+            <div class="rank-item__sub">Ifeoma Nwosu</div>
+          </div>
+        </div>
+        <div class="rank-item__right">37</div>
+      </div>
+
+      <div class="rank-item">
+        <div class="rank-item__left">
+          <i class="fa-solid fa-user-tie"></i>
+          <div>
+            <div class="rank-item__name">CSI</div>
+            <div class="rank-item__sub">Seyi Ogunleye</div>
+          </div>
+        </div>
+        <div class="rank-item__right">31</div>
+      </div>
+
+      <div class="rank-item">
+        <div class="rank-item__left">
+          <i class="fa-solid fa-user-tie"></i>
+          <div>
+            <div class="rank-item__name">Data</div>
+            <div class="rank-item__sub">Kemi Adebayo</div>
+          </div>
+        </div>
+        <div class="rank-item__right">28</div>
+      </div>
+
+      <div class="rank-item">
+        <div class="rank-item__left">
+          <i class="fa-solid fa-user-tie"></i>
+          <div>
+            <div class="rank-item__name">AI</div>
+            <div class="rank-item__sub">Uche Eze</div>
+          </div>
+        </div>
+        <div class="rank-item__right">24</div>
+      </div>
+
+      <div class="rank-item">
+        <div class="rank-item__left">
+          <i class="fa-solid fa-user-tie"></i>
+          <div>
+            <div class="rank-item__name">Marketing</div>
+            <div class="rank-item__sub">Zainab Ibrahim</div>
+          </div>
+        </div>
+        <div class="rank-item__right">19</div>
+      </div>
+
+      <div class="rank-item">
+        <div class="rank-item__left">
+          <i class="fa-solid fa-user-tie"></i>
+          <div>
+            <div class="rank-item__name">Finance</div>
+            <div class="rank-item__sub">Emeka Umeh</div>
+          </div>
+        </div>
+        <div class="rank-item__right">16</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- RIGHT: Team Core Values (Team + Core Value) -->
+ <section class="card panel panel--fixed">
+  <div class="panel__head">
+    <div class="panel__title">Team Core Values</div>
+  </div>
+
+  <!-- SCROLL BODY -->
+  <div class="panel__body panel__body--scroll">
+    <div class="rank-list">
+
+      <div class="rank-item">
+        <div class="rank-item__left">
+          <i class="fa-solid fa-star"></i>
+          <div>
+            <div class="rank-item__name">Sales</div>
+            <div class="rank-item__sub">Excellence</div>
+          </div>
+        </div>
+        <div class="rank-item__right">78</div>
+      </div>
+
+      <div class="rank-item">
+        <div class="rank-item__left">
+          <i class="fa-solid fa-star"></i>
+          <div>
+            <div class="rank-item__name">Project management</div>
+            <div class="rank-item__sub">Synergy</div>
+          </div>
+        </div>
+        <div class="rank-item__right">65</div>
+      </div>
+
+      <div class="rank-item">
+        <div class="rank-item__left">
+          <i class="fa-solid fa-star"></i>
+          <div>
+            <div class="rank-item__name">Front-end</div>
+            <div class="rank-item__sub">Innovation</div>
+          </div>
+        </div>
+        <div class="rank-item__right">42</div>
+      </div>
+
+      <div class="rank-item">
+        <div class="rank-item__left">
+          <i class="fa-solid fa-star"></i>
+          <div>
+            <div class="rank-item__name">Back end</div>
+            <div class="rank-item__sub">Resilience</div>
+          </div>
+        </div>
+        <div class="rank-item__right">37</div>
+      </div>
+
+      <div class="rank-item">
+        <div class="rank-item__left">
+          <i class="fa-solid fa-star"></i>
+          <div>
+            <div class="rank-item__name">CSI</div>
+            <div class="rank-item__sub">Integrity</div>
+          </div>
+        </div>
+        <div class="rank-item__right">31</div>
+      </div>
+
+      <div class="rank-item">
+        <div class="rank-item__left">
+          <i class="fa-solid fa-star"></i>
+          <div>
+            <div class="rank-item__name">Data</div>
+            <div class="rank-item__sub">Excellence</div>
+          </div>
+        </div>
+        <div class="rank-item__right">28</div>
+      </div>
+
+      <div class="rank-item">
+        <div class="rank-item__left">
+          <i class="fa-solid fa-star"></i>
+          <div>
+            <div class="rank-item__name">AI</div>
+            <div class="rank-item__sub">Innovation</div>
+          </div>
+        </div>
+        <div class="rank-item__right">24</div>
+      </div>
+
+      <div class="rank-item">
+        <div class="rank-item__left">
+          <i class="fa-solid fa-star"></i>
+          <div>
+            <div class="rank-item__name">Marketing</div>
+            <div class="rank-item__sub">Synergy</div>
+          </div>
+        </div>
+        <div class="rank-item__right">19</div>
+      </div>
+
+      <div class="rank-item">
+        <div class="rank-item__left">
+          <i class="fa-solid fa-star"></i>
+          <div>
+            <div class="rank-item__name">Finance</div>
+            <div class="rank-item__sub">Integrity</div>
+          </div>
+        </div>
+        <div class="rank-item__right">16</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+</div>
+        </section>
+
+        <!-- SUBMISSIONS (inactive) -->
+        <section class="page" id="page-submissions" aria-label="Submissions">
+          <div class="card empty">
+            <div class="empty__icon"><i class="fa-solid fa-lock"></i></div>
+            <div class="empty__title">Submissions</div>
+            <div class="empty__sub">Inactive for this iteration.</div>
+          </div>
+        </section>
+      </main>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

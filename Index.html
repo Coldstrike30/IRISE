@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JS For Beginners</title>
+    <link rel="stylesheet" href="index.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+        <header class="header">
+            <p>Welcome [USER]</p>
+            <h1>I-RISE CHALLENGE</h1>
+            <button class="addBtn"><i class="fa-solid fa-plus"></i>Add Submission</button>
+
+        </header>
+
+        <div class="cardContainer">
+            <div class="metricCard">
+                <div class="card-title">
+                    <p>Total submission</p>
+                    <div class="imgPLC"><i class="fa-solid fa-suitcase"></i></div>
+                </div>
+                <div class="Value">
+                <h2>18</h2>
+                </div>
+            </div>
+            <div class="metricCard">
+                <div class="card-title">
+                    <p>This Months Score</p>
+                    <div class="imgPLC"><i class="fa-solid fa-file-arrow-down"></i></div>
+                </div>
+                <h2>18</h2>
+            </div>
+           <div class="metricCard">
+                <div class="card-title">
+                    <p>Graph</p>
+                    <div class="imgPLC"><i class="fa-solid fa-arrow-trend-down"></i></div>
+                </div>
+                
+                <h2>18</h2>
+            </div>
+            <div class="metricCard">
+                <div class="card-title">
+                    <p>Highest Core Value</p>
+                    <div class="imgPLC"><i class="fa-solid fa-star"></i></div>
+                </div>
+                <h2>18</h2>
+            </div>
+        </div>
+
+
+        <div class="tabs">
+                <button class="tab-button active">My submissions</button>
+                <button class="tab-button">Leaderboard</button>
+            </div>
+
+        <div class="table-container">
+        <table class="SubmissionTable">
+                 
+                <thead class="theader">
+                    <tr>
+                        <th>Title</th>
+                        <th>Core Value</th>
+                        <th>Status</th>
+                        <th>Date Submitted</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tr class="content-row">
+                    <td id="Title">Sales confirmation</td>
+                    <td id="coreVal">
+                        <span class="core" data-core="innovation">
+                            <i class="fa-solid fa-lightbulb"></i>Innovation
+                        </span>
+                    </td>
+                    <td>
+                        <span class="status" data-status="approved">
+                        <i class="fa-solid fa-check"></i>Approved
+                        </span>
+                    </td>
+                    <td id="date">April 18 2026</td>
+                    <td id="score">10</td>
+
+                </tr> 
+                <tr class="content-row">
+                    <td id="Title">Sales confirmation</td>
+                    <td id="coreVal">
+                        <span class="core" data-core="integrity">
+                        <i class="fa-solid fa-shield"></i>integrity
+                        </span>
+
+                    </td>
+                    <td id="status">
+                        <span class="status" data-status="Pending">
+                        <i class="fa-solid fa-clock"></i>Pending
+                        </span>
+                        
+                    </td>
+                    <td id="date">April 18 2026</td>
+                    <td id="score">10</td>
+
+                </tr> 
+
+                <tr class="content-row">
+                    <td id="Title">Sales confirmation</td>
+                    <td id="coreVal">
+                        <span class="core" data-core="Synergy">
+                            <i class="fa-solid fa-users"></i>Synergy
+                        </span>
+                    </td>
+                    <td id="status">
+                        <span class="status" data-status="approved">
+                        <i class="fa-solid fa-check"></i>Approved
+                        </span>
+                        
+                    </td>
+                    <td id="date">April 18 2026</td>
+                    <td id="score">10</td>
+
+                </tr> 
+
+                <tr class="content-row">
+                    <td id="Title">Sales confirmation</td>
+                    <td id="coreVal">
+                        <span class="core" data-core="Resilience">
+                            <i class="fa-solid fa-hand-holding-heart"></i>Resilience
+                        </span>
+                    </td>
+                    <td id="status">
+                        <span class="status" data-status="Pending">
+                        <i class="fa-solid fa-clock"></i>Pending
+                        </span>
+                        
+                    </td>
+                    <td id="date">April 18 2026</td>
+                    <td id="score">10</td>
+
+                </tr> 
+                <tr class="content-row">
+                    <td id="Title">Sales confirmation</td>
+                    <td id="coreVal">
+                        <span class="core" data-core="Excellence">
+                            <i class="fa-solid fa-star"></i>Excellence
+                        </span>
+                    </td>
+                    <td id="status">
+                        <span class="status" data-status="Pending">
+                        <i class="fa-solid fa-clock"></i>Pending
+                        </span>
+                        
+                    </td>
+                    <td id="date">April 18 2026</td>
+                    <td id="score">10</td>
+
+                </tr> 
+
+
+
+            </table>
+            <div id="emptyState" class="empty-state">
+        <i class="fa-solid fa-cloud"></i>
+        <h3>No forecast</h3>
+        <p>wetin you wan make i put for you?</p>
+      </div>
+            </div>
+
+
+
+           <div id="addNoteModal" class="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 class="modal-title">New Value Submission</h3>
+      <button id="closeModalBtn" class="modal-close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <form id="noteForm" class="modal-body" enctype="multipart/form-data">
+
+      <!-- Name -->
+      <div class="form-group">
+        <label class="form-label">Name</label>
+        <input type="text" id="userName" class="form-input" required />
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" id="userEmail" class="form-input" required />
+      </div>
+
+      <!-- Department -->
+      <div class="form-group">
+        <label class="form-label">Department</label>
+        <select id="department" class="form-input" required>
+          <option value="">Select Department</option>
+          <option>Sales</option>
+          <option>Pre Sales</option>
+          <option>AppDev</option>
+          <option>CSI</option>
+          <option>Data</option>
+          <option>AI</option>
+          <option>Marketing</option>
+          <option>Finance</option>
+        </select>
+      </div>
+
+      <!-- Core Value -->
+      <div class="form-group">
+        <label class="form-label">Core Value</label>
+        <select id="coreValue" class="form-input" required>
+          <option value="">Select Core Value</option>
+          <option>Innovation</option>
+          <option>Integrity</option>
+          <option>Resilience</option>
+          <option>Synergy</option>
+          <option>Excellence</option>
+        </select>
+      </div>
+
+      <!-- Description -->
+      <div class="form-group">
+        <label class="form-label">Description</label>
+        <textarea
+          id="noteContent"
+          class="form-input form-textarea"
+          placeholder="Describe the situation or behaviour..."
+          required
+        ></textarea>
+      </div>
+
+      <!-- File Upload -->
+      <div class="form-group">
+        <label class="form-label">Attach Evidence</label>
+
+        <div id="dropZone" class="drop-zone">
+            <span class="uploadIMG"><i class="fa-solid fa-cloud-arrow-up"></i></span>
+          <p>Drag & drop file here or click to upload</p>
+          <span>Supported: PDF, JPG, PNG, DOCX (Max 10MB)</span>
+          <input type="file" id="fileInput" hidden />
+        </div>
+
+        <div id="filePreview" class="file-preview"></div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+</div>
+
+    
+
+   
+   
+
+<script>
+ 
+
+const addBtn = document.querySelector('.addBtn');
+const modalOverlay = document.getElementById('addNoteModal');
+const closeBtn = document.getElementById('closeModalBtn');
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+const filePreview = document.getElementById('filePreview');
+const form = document.getElementById('noteForm');
+
+
+addBtn.addEventListener('click', () => {
+  modalOverlay.classList.add('active');
+});
+
+
+closeBtn.addEventListener('click', () => {
+  modalOverlay.classList.remove('active');
+});
+
+modalOverlay.addEventListener('click', (e) => {
+  if (e.target === modalOverlay) {
+    modalOverlay.classList.remove('active');
+  }
+});
+
+
+dropZone.addEventListener('click', () => fileInput.click());
+
+
+dropZone.addEventListener('dragover', (e) => {
+  e.preventDefault();
+  dropZone.classList.add('dragover');
+});
+
+
+dropZone.addEventListener('dragleave', () => {
+  dropZone.classList.remove('dragover');
+});
+
+
+dropZone.addEventListener('drop', (e) => {
+  e.preventDefault();
+  dropZone.classList.remove('dragover');
+  const file = e.dataTransfer.files[0];
+  handleFile(file);
+});
+
+
+fileInput.addEventListener('change', () => {
+  const file = fileInput.files[0];
+  handleFile(file);
+});
+
+
+function handleFile(file) {
+  if (!file) return;
+
+  const allowedTypes = [
+    "application/pdf",
+    "image/jpeg",
+    "image/png",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+  ];
+
+  if (!allowedTypes.includes(file.type)) {
+    alert("Invalid file type.");
+    return;
+  }
+
+  if (file.size > 10 * 1024 * 1024) {
+    alert("File must be under 10MB.");
+    return;
+  }
+
+  filePreview.innerHTML = `Selected File: ${file.name}`;
+}
+
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+
+  console.log("Form submitted");
+  console.log("Name:", document.getElementById('userName').value);
+  console.log("Email:", document.getElementById('userEmail').value);
+  console.log("Department:", document.getElementById('department').value);
+  console.log("Core Value:", document.getElementById('coreValue').value);
+  console.log("Description:", document.getElementById('noteContent').value);
+  console.log("File:", fileInput.files[0]);
+
+  alert("Submission Successful!");
+
+  modalOverlay.classList.remove('active');
+  form.reset();
+  filePreview.innerHTML = "";
+});
+</script>
+
+
+           
+   </div>
+  </body>
+</html>
