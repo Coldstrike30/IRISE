@@ -37,7 +37,7 @@ body{
 
 /* ===== sidebar (kept) ===== */
 .sidebar{
-  background: linear-gradient(180deg, var (--sidebar), var(--sidebar2));
+  background: linear-gradient(180deg, var(--sidebar), var(--sidebar2));
   color:#fff;
   padding:16px;
   display:flex;
