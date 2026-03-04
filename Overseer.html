@@ -37,11 +37,10 @@
           <span>Home</span>
         </button>
 
-        <button class="nav__item is-disabled" type="button" data-page="submissions" disabled>
-          <i class="fa-solid fa-file-lines"></i>
-          <span>Submissions</span>
-          <span class="pill">Inactive</span>
-        </button>
+        <button class="nav__item" type="button" data-page="submissions">
+  <i class="fa-solid fa-file-lines"></i>
+  <span>Submissions</span>
+</button>
       </nav>
 
       <div class="sidebar__spacer"></div>
@@ -426,12 +425,111 @@
 
         <!-- SUBMISSIONS (inactive) -->
         <section class="page" id="page-submissions" aria-label="Submissions">
-          <div class="card empty">
-            <div class="empty__icon"><i class="fa-solid fa-lock"></i></div>
-            <div class="empty__title">Submissions</div>
-            <div class="empty__sub">Inactive for this iteration.</div>
-          </div>
-        </section>
+  <div class="page-head">
+    <h2 class="page-title">Submissions</h2>
+    <p class="page-sub">Browse and review staff submissions (placeholder data).</p>
+  </div>
+
+  <!-- TOP SUMMARY (blue layout style) -->
+  <div class="submissions-summary">
+    <article class="card summary-card">
+      <div class="summary-card__left">
+        <div class="summary-card__label">Total Submissions</div>
+        <div class="summary-card__value" id="sumTotal">128</div>
+      </div>
+      <div class="summary-card__icon" aria-hidden="true">
+        <i class="fa-solid fa-inbox"></i>
+      </div>
+    </article>
+
+    <article class="card summary-card">
+      <div class="summary-card__left">
+        <div class="summary-card__label">Highest Scoring Submission</div>
+        <div class="summary-card__valueText" id="sumTopName">Emily Roberts</div>
+        <div class="summary-card__meta">Score: <span id="sumTopScore">9</span></div>
+      </div>
+      <div class="summary-card__icon" aria-hidden="true">
+        <i class="fa-solid fa-trophy"></i>
+      </div>
+    </article>
+  </div>
+
+  <!-- FILTER ROW (blue layout style) -->
+  <div class="card filterbar">
+    <div class="filterbar__row">
+      <div class="filterbar__field search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input id="qSearch" type="text" placeholder="Search by staff name..." />
+      </div>
+
+      <select id="qCoreValue">
+        <option value="">Core Value</option>
+        <option>Resilience</option>
+        <option>Excellence</option>
+        <option>Synergy</option>
+        <option>Integrity</option>
+        <option>Innovation</option>
+      </select>
+
+      <select id="qTeam">
+        <option value="">Team</option>
+        <option>Sales</option>
+        <option>Project management</option>
+        <option>Front-end</option>
+        <option>Back end</option>
+        <option>CSI</option>
+        <option>Data</option>
+        <option>AI</option>
+        <option>Marketing</option>
+        <option>Finance</option>
+      </select>
+
+      <select id="qStatus">
+  <option value="">Status</option>
+  <option>Pending</option>
+  <option>Reviewed</option>
+</select>
+
+      <button class="btn btn--ghost" id="btnReset" type="button">Reset</button>
+      <button class="btn btn--primary" id="btnFilter" type="button">
+        <i class="fa-solid fa-filter"></i> Filter
+      </button>
+    </div>
+  </div>
+
+  <!-- TABLE (blue layout style) -->
+  <section class="card table-card">
+    <div class="table-card__head">
+      <div class="table-card__title">Recent Submissions</div>
+    </div>
+
+    <div class="table-wrap">
+      <table class="table" id="submissionsTable">
+        <thead>
+          <tr>
+            <th>Staff Member</th>
+            <th>Team</th>
+            <th>Core Value</th>
+            <th>Date</th>
+            <th>Evidence</th>
+            <th>Status</th>
+            <th>Score</th>
+            
+          </tr>
+        </thead>
+        <tbody id="submissionsTbody">
+          <!-- JS injects rows -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-footer">
+      <button class="btn btn--ghost" id="btnPrev" type="button">Previous</button>
+      <div class="pager" id="pager"></div>
+      <button class="btn btn--ghost" id="btnNext" type="button">Next</button>
+    </div>
+  </section>
+</section>
       </main>
     </section>
   </div>
