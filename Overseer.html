@@ -113,7 +113,7 @@
             </article>
           </div>
 
-          <!-- BLUE HOME: middle row (Team Performance + Top Team Champions panel) -->
+         
           <div class="two-col">
             <section class="card panel">
               <div class="panel__head">
@@ -194,16 +194,16 @@
             </section>
           </div>
 
-          <!-- BLUE HOME: bottom row (it repeats panels) -->
+        
           <div class="two-col">
-  <!-- LEFT: Team Champions (Team + Person) -->
+ 
   
     <section class="card panel panel--fixed">
   <div class="panel__head">
     <div class="panel__title">Team Champions</div>
   </div>
 
-  <!-- NEW WRAPPER (this is what scrolls) -->
+ 
   <div class="panel__body panel__body--scroll">
     <div class="rank-list">
       <div class="rank-item">
@@ -308,7 +308,7 @@
   </div>
 </section>
 
-  <!-- RIGHT: Team Core Values (Team + Core Value) -->
+ 
  <section class="card panel panel--fixed">
   <div class="panel__head">
     <div class="panel__title">Team Core Values</div>
@@ -423,14 +423,14 @@
 </div>
         </section>
 
-        <!-- SUBMISSIONS (inactive) -->
+        
         <section class="page" id="page-submissions" aria-label="Submissions">
   <div class="page-head">
     <h2 class="page-title">Submissions</h2>
     <p class="page-sub">Browse and review staff submissions (placeholder data).</p>
   </div>
 
-  <!-- TOP SUMMARY (blue layout style) -->
+ 
   <div class="submissions-summary">
     <article class="card summary-card">
       <div class="summary-card__left">
@@ -454,7 +454,7 @@
     </article>
   </div>
 
-  <!-- FILTER ROW (blue layout style) -->
+
   <div class="card filterbar">
     <div class="filterbar__row">
       <div class="filterbar__field search">
@@ -497,7 +497,7 @@
     </div>
   </div>
 
-  <!-- TABLE (blue layout style) -->
+ 
   <section class="card table-card">
     <div class="table-card__head">
       <div class="table-card__title">Recent Submissions</div>
@@ -518,7 +518,7 @@
           </tr>
         </thead>
         <tbody id="submissionsTbody">
-          <!-- JS injects rows -->
+          
         </tbody>
       </table>
     </div>
@@ -532,6 +532,78 @@
 </section>
       </main>
     </section>
+  </div>
+
+
+  <div id="overseerReviewOverlay" class="review-overlay">
+    <div class="review-panel review-panel--read-only">
+      <div class="review-header">
+        <h3>Reviewed Submission</h3>
+        <button id="closeOverseerReview" class="close-btn">&times;</button>
+      </div>
+
+      <div class="review-body">
+        <div class="review-left">
+          <h4>Submission Details</h4>
+          <p><strong>Staff:</strong> <span id="ovStaff">Jane Smith</span></p>
+          <p><strong>Team:</strong> <span id="ovTeam">Sales</span></p>
+          <p><strong>Core Value:</strong> <span id="ovCore">Excellence</span></p>
+          <p><strong>Date:</strong> <span id="ovDate">04/22/2024</span></p>
+
+          <div class="description-box">
+            Placeholder summary of the completed submission. Backend data will replace this later.
+          </div>
+
+          <div class="evidence-section">
+            <h4>Evidence</h4>
+            <div class="evidence-file" id="ovEvidenceOne">Report.pdf</div>
+            <div class="evidence-file" id="ovEvidenceTwo">Screenshot.png</div>
+          </div>
+        </div>
+
+        <div class="review-right review-right--readonly">
+          <h4>Manager Comments</h4>
+          <div class="readonly-comment" id="ovComment">Strong ownership shown throughout the submission. The manager review highlighted clear initiative, useful documentation, and visible team impact.</div>
+
+          <div class="score-block score-block--readonly">
+            <h4>Score (1–5)</h4>
+
+            <div class="criteria-rating criteria-rating--readonly">
+              <div class="criteria-rating__row">
+                <span class="criteria-rating__label">Authenticity</span>
+                <div class="criteria-stars is-readonly" id="ovAuthStars"></div>
+              </div>
+            </div>
+
+            <div class="criteria-rating criteria-rating--readonly">
+              <div class="criteria-rating__row">
+                <span class="criteria-rating__label">Initiative</span>
+                <div class="criteria-stars is-readonly" id="ovInitStars"></div>
+              </div>
+            </div>
+
+            <div class="criteria-rating criteria-rating--readonly">
+              <div class="criteria-rating__row">
+                <span class="criteria-rating__label">Impact</span>
+                <div class="criteria-stars is-readonly" id="ovImpactStars"></div>
+              </div>
+            </div>
+
+            <div class="criteria-rating criteria-rating--readonly">
+              <div class="criteria-rating__row">
+                <span class="criteria-rating__label">Alignment</span>
+                <div class="criteria-stars is-readonly" id="ovAlignStars"></div>
+              </div>
+            </div>
+
+            <div class="final-score-display">
+              <span>Final Score</span>
+              <strong id="ovFinalScore">4.0 / 5.0</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="app.js"></script>

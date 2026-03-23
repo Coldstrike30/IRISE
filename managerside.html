@@ -4,277 +4,299 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>JS For Beginners</title>
+    <title>I-RISE Review</title>
     <link rel="stylesheet" href="manage.css">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   </head>
   <body>
-    <div class="container">
-        <header class="header">
-            
-            <h1>I-RISE Review</h1>
+    <div class="app-shell">
+      <aside class="sidebar" id="managerSidebar">
+        <div class="sidebar__brand">
+          <div class="brand__mark"><i class="fa-solid fa-bolt"></i></div>
+          <div>
+            <div class="brand__name">Snapnet</div>
+            <div class="brand__sub">I-RISE</div>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <button class="nav__item is-active" type="button">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+          </button>
+                  </nav>
+
+        <div class="sidebar__spacer"></div>
+
+        <button class="logout" type="button">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          Log Out
+        </button>
+      </aside>
+
+      <div class="sidebar-overlay" id="managerSidebarOverlay"></div>
+
+      <main class="main-area">
+        <div class="container">
+          <header class="header">
+            <div class="header-left">
+              <button class="sidebar-toggle" id="managerSidebarToggle" type="button" aria-label="Open sidebar menu">
+                <i class="fa-solid fa-bolt"></i>
+              </button>
+              <h1>I-RISE Review</h1>
+            </div>
             <p>Welcome [USER]</p>
-            
+          </header>
 
-        </header>
-
-        <div class="cardContainer">
+          <div class="cardContainer">
             <div class="metricCard">
-                <div class="card-title">
-                    <p>Total submission</p>
-                    <div class="imgPLC"><i class="fa-solid fa-suitcase"></i></div>
-                </div>
-                <div class="Value">
+              <div class="card-title">
+                <p>Total submission</p>
+                <div class="imgPLC"><i class="fa-solid fa-suitcase"></i></div>
+              </div>
+              <div class="Value">
                 <h2>18</h2>
-                </div>
+              </div>
             </div>
             <div class="metricCard">
-                <div class="card-title">
-                    <p>Pending Reviews</p>
-                    <div class="imgPLC"><i class="fa-solid fa-file-arrow-down"></i></div>
-                </div>
-                <h2>18</h2>
-            </div>
-           <div class="metricCard">
-                <div class="card-title">
-                    <p>Reviewed</p>
-                    <div class="imgPLC"><i class="fa-solid fa-arrow-trend-down"></i></div>
-                </div>
-                
-                <h2>18</h2>
+              <div class="card-title">
+                <p>Pending Reviews</p>
+                <div class="imgPLC"><i class="fa-solid fa-file-arrow-down"></i></div>
+              </div>
+              <h2>18</h2>
             </div>
             <div class="metricCard">
-                <div class="card-title">
-                    <p>High Impact</p>
-                    <div class="imgPLC"><i class="fa-solid fa-star"></i></div>
-                </div>
-                <h2>18</h2>
+              <div class="card-title">
+                <p>Reviewed</p>
+                <div class="imgPLC"><i class="fa-solid fa-arrow-trend-down"></i></div>
+              </div>
+              <h2>18</h2>
             </div>
-        </div>
+            <div class="metricCard">
+              <div class="card-title">
+                <p>High Impact</p>
+                <div class="imgPLC"><i class="fa-solid fa-star"></i></div>
+              </div>
+              <h2>18</h2>
+            </div>
+          </div>
 
+          <div class="controls">
+            <div class="controls-container">
+              <div class="search-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Search by staff name..." class="search-input"/>
+              </div>
 
-        <div class="controls">
-  <div class="controls-container">
+              <div class="filter-actions">
+                <button id="filterBtn" class="filter-btn" type="button">
+                  <i class="fas fa-filter"></i> Filters
+                </button>
+              </div>
 
-    <!-- Search -->
-    <div class="search-wrapper">
-      <i class="fas fa-search search-icon"></i>
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="Search by staff name..."
-        class="search-input"
-      />
-    </div>
+              <div class="filter-popover" id="managerFilterPopover">
+                <div class="filter-popover__header">
+                  <div class="filter-popover__title">Filter submissions</div>
+                  <button class="filter-popover__close" id="managerFilterClose" type="button">&times;</button>
+                </div>
 
+                <div class="filter-grid">
+                  <div>
+                    <label class="form-label" for="departmentFilter">Department</label>
+                    <select id="departmentFilter" class="filter-select">
+                      <option value="">Department</option>
+                      <option value="Sales">Sales</option>
+                      <option value="Pre Sales">Pre Sales</option>
+                      <option value="AppDev">AppDev</option>
+                      <option value="CSI">CSI</option>
+                      <option value="Data">Data</option>
+                      <option value="AI">AI</option>
+                      <option value="Marketing">Marketing</option>
+                      <option value="Finance">Finance</option>
+                    </select>
+                  </div>
 
-    <div class="filter-group">
+                  <div>
+                    <label class="form-label" for="coreValueFilter">Core Value</label>
+                    <select id="coreValueFilter" class="filter-select">
+                      <option value="">Core Value</option>
+                      <option value="Innovation">Innovation</option>
+                      <option value="Integrity">Integrity</option>
+                      <option value="Resilience">Resilience</option>
+                      <option value="Synergy">Synergy</option>
+                      <option value="Excellence">Excellence</option>
+                    </select>
+                  </div>
 
-      <select id="departmentFilter" class="filter-select">
-        <option value="">Department</option>
-        <option value="Sales">Sales</option>
-        <option value="Pre Sales">Pre Sales</option>
-        <option value="AppDev">AppDev</option>
-        <option value="CSI">CSI</option>
-        <option value="Data">Data</option>
-        <option value="AI">AI</option>
-        <option value="Marketing">Marketing</option>
-        <option value="Finance">Finance</option>
-      </select>
+                  <div>
+                    <label class="form-label" for="statusFilter">Status</label>
+                    <select id="statusFilter" class="filter-select">
+                      <option value="">Status</option>
+                      <option value="Pending">Pending</option>
+                      <option value="Reviewed">Reviewed</option>
+                    </select>
+                  </div>
 
-      <select id="coreValueFilter" class="filter-select">
-        <option value="">Core Value</option>
-        <option value="Innovation">Innovation</option>
-        <option value="Integrity">Integrity</option>
-        <option value="Resilience">Resilience</option>
-        <option value="Synergy">Synergy</option>
-        <option value="Excellence">Excellence</option>
-      </select>
+                  <div>
+                    <label class="form-label" for="scoreFilter">Score</label>
+                    <select id="scoreFilter" class="filter-select">
+                      <option value="">Score</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+                  </div>
+                </div>
 
-      <select id="statusFilter" class="filter-select">
-        <option value="">Status</option>
-        <option value="Pending">Pending</option>
-        <option value="Reviewed">Reviewed</option>
-      </select>
+                <div class="filter-popover__footer">
+                  <button class="filter-reset-btn" id="managerFilterReset" type="button">Reset</button>
+                  <button class="filter-apply-btn" id="managerFilterApply" type="button">Apply</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-      <select id="scoreFilter" class="filter-select">
-        <option value="">Score</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-
-      <button id="filterBtn" class="filter-btn">
-        <i class="fas fa-filter"></i> Apply
-      </button>
-
-    </div>
-  </div>
-</div>
-
-        <div class="table-container">
-        <table class="SubmissionTable">
-                 
-                <thead class="theader">
-                    <tr>
-                        <th>Staff name</th>
-                        <th>Department</th>
-                        <th>Core Value</th>
-                        <th>Date Submitted</th>
-                        <th>Evidence</th>
-                        <th>Status</th>
-                        <th>Score</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tr class="content-row">
-                    <td id="staffName">Sales confirmation</td>
-                    <td id="department">10</td>
-                    <td id="coreVal">
-                        <span class="core" data-core="innovation">
-                            <i class="fa-solid fa-lightbulb"></i>Innovation
-                        </span>
-                    </td>
-                    <td id="date">April 18 2026</td>
-                    <td id="Evidence">10</td>
-                    <td>
-                        <span class="status" data-status="approved">
-                        <i class="fa-solid fa-check"></i>Approved
-                        </span>
-                    </td>
-                    
-                    <td id="score"><i class="fa-solid fa-file"></i>2 files</td>
-                    
-                    
-                    <td id="Action">
-                        <button class="reviewBtn">Review</button>
-                    </td>
-
-                </tr> 
-                
-
-
-
+          <div class="table-container">
+            <table class="SubmissionTable">
+              <thead class="theader">
+                <tr>
+                  <th>Staff name</th>
+                  <th>Department</th>
+                  <th>Core Value</th>
+                  <th>Date Submitted</th>
+                  <th>Evidence</th>
+                  <th>Status</th>
+                  <th>Score</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tr class="content-row">
+                <td id="staffName">Sales confirmation</td>
+                <td id="department">10</td>
+                <td id="coreVal">
+                  <span class="core" data-core="innovation">
+                    <i class="fa-solid fa-lightbulb"></i>Innovation
+                  </span>
+                </td>
+                <td id="date">April 18 2026</td>
+                <td id="Evidence">10</td>
+                <td>
+                  <span class="status" data-status="Approved">
+                    <i class="fa-solid fa-check"></i>Approved
+                  </span>
+                </td>
+                <td id="score"><i class="fa-solid fa-file"></i>2 files</td>
+                <td id="Action">
+                  <button class="reviewBtn" type="button">Review</button>
+                </td>
+              </tr>
             </table>
+
             <div id="emptyState" class="empty-state">
-        <i class="fa-solid fa-cloud"></i>
-        <h3>No forecast</h3>
-        <p>wetin you wan make i put for you?</p>
-      </div>
+              <i class="fa-solid fa-cloud"></i>
+              <h3>No forecast</h3>
+              <p>wetin you wan make i put for you?</p>
             </div>
-  
-<div id="reviewOverlay" class="review-overlay">
+          </div>
 
-  <div class="review-panel">
+          <div id="reviewOverlay" class="review-overlay">
+            <div class="review-panel">
+              <div class="review-header">
+                <h3>Review Submission</h3>
+                <button id="closeReview" class="close-btn" type="button">&times;</button>
+              </div>
 
-    <div class="review-header">
-      <h3>Review Submission</h3>
-      <button id="closeReview" class="close-btn">&times;</button>
+              <div class="review-body">
+                <div class="review-left">
+                  <h4>Submission Details</h4>
+                  <p><strong>Staff:</strong> Jane Doe</p>
+                  <p><strong>Department:</strong> Sales</p>
+                  <p><strong>Core Value:</strong> Innovation</p>
+                  <p><strong>Date:</strong> Feb 10, 2026</p>
+
+                  <div class="description-box">
+                    Jane developed a new automation process that improved reporting efficiency by 35%.
+                  </div>
+
+                  <div class="evidence-section">
+                    <h4>Evidence</h4>
+                    <div class="evidence-file">Report.pdf</div>
+                    <div class="evidence-file">Screenshot.png</div>
+                  </div>
+                </div>
+
+                <div class="review-right">
+                  <h4>Manager Comments</h4>
+                  <textarea placeholder="Write your feedback..."></textarea>
+
+                  <h4>Score (1–5)</h4>
+                  <div class="rubric">
+                    <div class="rubric-row" data-criterion="authenticity">
+                      <span class="rubric-label">Authenticity</span>
+                      <div class="rating-stars">
+                        <button type="button" data-value="1">&#9733;</button>
+                        <button type="button" data-value="2">&#9733;</button>
+                        <button type="button" data-value="3">&#9733;</button>
+                        <button type="button" data-value="4">&#9733;</button>
+                        <button type="button" data-value="5">&#9733;</button>
+                      </div>
+                    </div>
+
+                    <div class="rubric-row" data-criterion="initiative">
+                      <span class="rubric-label">Initiative</span>
+                      <div class="rating-stars">
+                        <button type="button" data-value="1">&#9733;</button>
+                        <button type="button" data-value="2">&#9733;</button>
+                        <button type="button" data-value="3">&#9733;</button>
+                        <button type="button" data-value="4">&#9733;</button>
+                        <button type="button" data-value="5">&#9733;</button>
+                      </div>
+                    </div>
+
+                    <div class="rubric-row" data-criterion="impact">
+                      <span class="rubric-label">Impact</span>
+                      <div class="rating-stars">
+                        <button type="button" data-value="1">&#9733;</button>
+                        <button type="button" data-value="2">&#9733;</button>
+                        <button type="button" data-value="3">&#9733;</button>
+                        <button type="button" data-value="4">&#9733;</button>
+                        <button type="button" data-value="5">&#9733;</button>
+                      </div>
+                    </div>
+
+                    <div class="rubric-row" data-criterion="alignment">
+                      <span class="rubric-label">Alignment (Integrity)</span>
+                      <div class="rating-stars">
+                        <button type="button" data-value="1">&#9733;</button>
+                        <button type="button" data-value="2">&#9733;</button>
+                        <button type="button" data-value="3">&#9733;</button>
+                        <button type="button" data-value="4">&#9733;</button>
+                        <button type="button" data-value="5">&#9733;</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="final-score">
+                    <span class="final-score__label">Final score</span>
+                    <span class="final-score__value" id="finalScoreValue">0.0 / 5.0</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="review-footer">
+                <button class="cancel-btn" id="cancelReview" type="button">Cancel</button>
+                <button class="submit-btn" type="button">Submit Review</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
 
-    <div class="review-body">
-
-      <div class="review-left">
-        <h4>Submission Details</h4>
-        <p><strong>Staff:</strong> Jane Doe</p>
-        <p><strong>Department:</strong> Sales</p>
-        <p><strong>Core Value:</strong> Innovation</p>
-        <p><strong>Date:</strong> Feb 10, 2026</p>
-
-        <div class="description-box">
-          Jane developed a new automation process that improved reporting efficiency by 35%.
-        </div>
-
-        <div class="evidence-section">
-          <h4>Evidence</h4>
-          <div class="evidence-file">Report.pdf</div>
-          <div class="evidence-file">Screenshot.png</div>
-        </div>
-      </div>
-
-      <div class="review-right">
-
-        <h4>Manager Comments</h4>
-        <textarea placeholder="Write your feedback..."></textarea>
-
-        <h4>Score (1–5)</h4>
-        <div class="star-rating">
-          <span data-value="1">&#9733;</span>
-          <span data-value="2">&#9733;</span>
-          <span data-value="3">&#9733;</span>
-          <span data-value="4">&#9733;</span>
-          <span data-value="5">&#9733;</span>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="review-footer">
-      <button class="cancel-btn" id="cancelReview">Cancel</button>
-      <button class="submit-btn">Submit Review</button>
-    </div>
-
-  </div>
-
-</div>
-
-   <script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const reviewBtns = document.querySelectorAll(".reviewBtn");
-  const overlay = document.getElementById("reviewOverlay");
-  const closeBtn = document.getElementById("closeReview");
-  const cancelBtn = document.getElementById("cancelReview");
-  const stars = document.querySelectorAll(".star-rating span");
-
-  let selectedRating = 0;
-
-  reviewBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      overlay.style.display = "flex";
-      document.body.style.overflow = "hidden";
-    });
-  });
-
-  function closePanel() {
-    overlay.style.display = "none";
-    document.body.style.overflow = "auto";
-  }
-
-  closeBtn.addEventListener("click", closePanel);
-  cancelBtn.addEventListener("click", closePanel);
-
-  overlay.addEventListener("click", function(e){
-    if(e.target === overlay) {
-      closePanel();
-    }
-  });
-
-  stars.forEach(star => {
-    star.addEventListener("click", function () {
-      selectedRating = this.dataset.value;
-
-      stars.forEach(s => s.classList.remove("active"));
-      for (let i = 0; i < selectedRating; i++) {
-        stars[i].classList.add("active");
-      }
-    });
-  });
-
-});
-</script>
-   
-
-
-
-
-           
-   </div>
+    <script src="managerside.js">
+     
+    </script>
   </body>
 </html>
