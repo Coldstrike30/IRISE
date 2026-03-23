@@ -6,14 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>I-RISE Challenge</title>
     <link rel="stylesheet" href="index.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </head>
   <body>
-    <div class="app-shell">
-      <aside class="sidebar">
+    <div class="layout">
+      <aside class="sidebar" id="userSidebar">
         <div class="sidebar__brand">
           <div class="brand__mark">
             <i class="fa-solid fa-bolt"></i>
@@ -30,163 +27,186 @@
             <span>Home</span>
           </a>
         </nav>
+
+        <div class="sidebar__spacer"></div>
+
+        <button class="logout" type="button">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          Log Out
+        </button>
       </aside>
 
-      <main class="page-shell">
-        <div class="page-top-gradient"></div>
+      <div class="sidebar-overlay" id="userSidebarOverlay"></div>
 
-        <div class="container">
-          <header class="header">
-            <p>Welcome [USER]</p>
-            <h1>I-RISE CHALLENGE</h1>
-            <button class="addBtn"><i class="fa-solid fa-plus"></i>Add Submission</button>
-          </header>
+      <section class="content">
+        <header class="topbar">
+          <div class="topbar__inner">
+            <div class="topbar__left">
+              <button class="sidebar-toggle" id="userSidebarToggle" type="button" aria-label="Open sidebar menu">
+                <i class="fa-solid fa-bars"></i>
+              </button>
+              <h1 class="topbar__title">I-RISE Challenge</h1>
+            </div>
+            <div class="topbar__right">Welcome <strong>[USER]</strong></div>
+          </div>
+        </header>
 
-          <section class="cardContainer">
-            <div class="metricCard">
-              <div class="card-title">
-                <p>Total submission</p>
-                <div class="imgPLC"><i class="fa-solid fa-suitcase"></i></div>
+        <main class="main">
+          <section class="page is-visible" aria-label="User overview">
+            <div class="page-head page-head--with-action">
+              <div>
+                <h2 class="page-title">Hey, User!</h2>
+                <p class="page-sub">Here's an overview of the value case activity.</p>
               </div>
-              <div class="Value">
-                <h2>18</h2>
-              </div>
+              <button class="addBtn"><i class="fa-solid fa-plus"></i>Add Submission</button>
             </div>
 
-            <div class="metricCard">
-              <div class="card-title">
-                <p>This Months Score</p>
-                <div class="imgPLC"><i class="fa-solid fa-file-arrow-down"></i></div>
-              </div>
-              <h2>18</h2>
+            <section class="overview-grid">
+              <article class="card overview-card">
+                <div class="overview-card__left">
+                  <div class="overview-card__label">Total submission</div>
+                  <div class="overview-card__value">18</div>
+                </div>
+                <div class="overview-card__icon" aria-hidden="true"><i class="fa-solid fa-suitcase"></i></div>
+              </article>
+
+              <article class="card overview-card">
+                <div class="overview-card__left">
+                  <div class="overview-card__label">This Months Score</div>
+                  <div class="overview-card__value">18</div>
+                </div>
+                <div class="overview-card__icon" aria-hidden="true"><i class="fa-solid fa-file-arrow-down"></i></div>
+              </article>
+
+              <article class="card overview-card">
+                <div class="overview-card__left">
+                  <div class="overview-card__label">Graph</div>
+                  <div class="overview-card__value">18</div>
+                </div>
+                <div class="overview-card__icon" aria-hidden="true"><i class="fa-solid fa-arrow-trend-down"></i></div>
+              </article>
+
+              <article class="card overview-card">
+                <div class="overview-card__left">
+                  <div class="overview-card__label">Highest Core Value</div>
+                  <div class="overview-card__value">18</div>
+                </div>
+                <div class="overview-card__icon" aria-hidden="true"><i class="fa-solid fa-star"></i></div>
+              </article>
+            </section>
+
+            <div class="tabs">
+              <button class="tab-button active">My submissions</button>
+              <button class="tab-button">Leaderboard</button>
             </div>
 
-            <div class="metricCard">
-              <div class="card-title">
-                <p>Graph</p>
-                <div class="imgPLC"><i class="fa-solid fa-arrow-trend-down"></i></div>
+            <div class="card table-card">
+              <div class="table-wrap">
+                <table class="SubmissionTable table">
+                  <thead class="theader">
+                    <tr>
+                      <th>Title</th>
+                      <th>Core Value</th>
+                      <th>Status</th>
+                      <th>Date Submitted</th>
+                      <th>Score</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="content-row">
+                      <td id="Title">Sales confirmation</td>
+                      <td id="coreVal">
+                        <span class="core" data-core="innovation">
+                          <i class="fa-solid fa-lightbulb"></i>Innovation
+                        </span>
+                      </td>
+                      <td>
+                        <span class="status" data-status="approved">
+                          <i class="fa-solid fa-check"></i>Approved
+                        </span>
+                      </td>
+                      <td id="date">April 18 2026</td>
+                      <td id="score">10</td>
+                    </tr>
+                    <tr class="content-row">
+                      <td id="Title">Sales confirmation</td>
+                      <td id="coreVal">
+                        <span class="core" data-core="integrity">
+                          <i class="fa-solid fa-shield"></i>integrity
+                        </span>
+                      </td>
+                      <td id="status">
+                        <span class="status" data-status="Pending">
+                          <i class="fa-solid fa-clock"></i>Pending
+                        </span>
+                      </td>
+                      <td id="date">April 18 2026</td>
+                      <td id="score">10</td>
+                    </tr>
+                    <tr class="content-row">
+                      <td id="Title">Sales confirmation</td>
+                      <td id="coreVal">
+                        <span class="core" data-core="Synergy">
+                          <i class="fa-solid fa-users"></i>Synergy
+                        </span>
+                      </td>
+                      <td id="status">
+                        <span class="status" data-status="approved">
+                          <i class="fa-solid fa-check"></i>Approved
+                        </span>
+                      </td>
+                      <td id="date">April 18 2026</td>
+                      <td id="score">10</td>
+                    </tr>
+                    <tr class="content-row">
+                      <td id="Title">Sales confirmation</td>
+                      <td id="coreVal">
+                        <span class="core" data-core="Resilience">
+                          <i class="fa-solid fa-hand-holding-heart"></i>Resilience
+                        </span>
+                      </td>
+                      <td id="status">
+                        <span class="status" data-status="Pending">
+                          <i class="fa-solid fa-clock"></i>Pending
+                        </span>
+                      </td>
+                      <td id="date">April 18 2026</td>
+                      <td id="score">10</td>
+                    </tr>
+                    <tr class="content-row">
+                      <td id="Title">Sales confirmation</td>
+                      <td id="coreVal">
+                        <span class="core" data-core="Excellence">
+                          <i class="fa-solid fa-star"></i>Excellence
+                        </span>
+                      </td>
+                      <td id="status">
+                        <span class="status" data-status="Pending">
+                          <i class="fa-solid fa-clock"></i>Pending
+                        </span>
+                      </td>
+                      <td id="date">April 18 2026</td>
+                      <td id="score">10</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <h2>18</h2>
-            </div>
-
-            <div class="metricCard">
-              <div class="card-title">
-                <p>Highest Core Value</p>
-                <div class="imgPLC"><i class="fa-solid fa-star"></i></div>
+              <div id="emptyState" class="empty-state">
+                <i class="fa-solid fa-cloud"></i>
+                <h3>No forecast</h3>
+                <p>wetin you wan make i put for you?</p>
               </div>
-              <h2>18</h2>
             </div>
           </section>
-
-          <div class="tabs">
-            <button class="tab-button active">My submissions</button>
-            <button class="tab-button">Leaderboard</button>
-          </div>
-
-          <div class="table-container">
-            <table class="SubmissionTable">
-              <thead class="theader">
-                <tr>
-                  <th>Title</th>
-                  <th>Core Value</th>
-                  <th>Status</th>
-                  <th>Date Submitted</th>
-                  <th>Score</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="content-row">
-                  <td id="Title">Sales confirmation</td>
-                  <td id="coreVal">
-                    <span class="core" data-core="innovation">
-                      <i class="fa-solid fa-lightbulb"></i>Innovation
-                    </span>
-                  </td>
-                  <td>
-                    <span class="status" data-status="approved">
-                      <i class="fa-solid fa-check"></i>Approved
-                    </span>
-                  </td>
-                  <td id="date">April 18 2026</td>
-                  <td id="score">10</td>
-                </tr>
-                <tr class="content-row">
-                  <td id="Title">Sales confirmation</td>
-                  <td id="coreVal">
-                    <span class="core" data-core="integrity">
-                      <i class="fa-solid fa-shield"></i>integrity
-                    </span>
-                  </td>
-                  <td id="status">
-                    <span class="status" data-status="Pending">
-                      <i class="fa-solid fa-clock"></i>Pending
-                    </span>
-                  </td>
-                  <td id="date">April 18 2026</td>
-                  <td id="score">10</td>
-                </tr>
-                <tr class="content-row">
-                  <td id="Title">Sales confirmation</td>
-                  <td id="coreVal">
-                    <span class="core" data-core="Synergy">
-                      <i class="fa-solid fa-users"></i>Synergy
-                    </span>
-                  </td>
-                  <td id="status">
-                    <span class="status" data-status="approved">
-                      <i class="fa-solid fa-check"></i>Approved
-                    </span>
-                  </td>
-                  <td id="date">April 18 2026</td>
-                  <td id="score">10</td>
-                </tr>
-                <tr class="content-row">
-                  <td id="Title">Sales confirmation</td>
-                  <td id="coreVal">
-                    <span class="core" data-core="Resilience">
-                      <i class="fa-solid fa-hand-holding-heart"></i>Resilience
-                    </span>
-                  </td>
-                  <td id="status">
-                    <span class="status" data-status="Pending">
-                      <i class="fa-solid fa-clock"></i>Pending
-                    </span>
-                  </td>
-                  <td id="date">April 18 2026</td>
-                  <td id="score">10</td>
-                </tr>
-                <tr class="content-row">
-                  <td id="Title">Sales confirmation</td>
-                  <td id="coreVal">
-                    <span class="core" data-core="Excellence">
-                      <i class="fa-solid fa-star"></i>Excellence
-                    </span>
-                  </td>
-                  <td id="status">
-                    <span class="status" data-status="Pending">
-                      <i class="fa-solid fa-clock"></i>Pending
-                    </span>
-                  </td>
-                  <td id="date">April 18 2026</td>
-                  <td id="score">10</td>
-                </tr>
-              </tbody>
-            </table>
-            <div id="emptyState" class="empty-state">
-              <i class="fa-solid fa-cloud"></i>
-              <h3>No forecast</h3>
-              <p>wetin you wan make i put for you?</p>
-            </div>
-          </div>
-        </div>
-      </main>
+        </main>
+      </section>
     </div>
 
     <div id="addNoteModal" class="modal-overlay">
       <div class="modal">
         <div class="modal-header">
           <h3 class="modal-title">New Value Submission</h3>
-          <button id="closeModalBtn" class="modal-close">
+          <button id="closeModalBtn" class="modal-close" type="button">
             <i class="fas fa-times"></i>
           </button>
         </div>
@@ -255,6 +275,29 @@
       </div>
     </div>
 
+    <script>
+      (() => {
+        const sidebar = document.getElementById('userSidebar');
+        const overlay = document.getElementById('userSidebarOverlay');
+        const toggle = document.getElementById('userSidebarToggle');
+        if (!sidebar || !overlay || !toggle) return;
+
+        const closeSidebar = () => {
+          sidebar.classList.remove('active');
+          overlay.classList.remove('active');
+        };
+
+        toggle.addEventListener('click', () => {
+          sidebar.classList.toggle('active');
+          overlay.classList.toggle('active');
+        });
+
+        overlay.addEventListener('click', closeSidebar);
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 860) closeSidebar();
+        });
+      })();
+    </script>
     <script src="index.js"></script>
   </body>
 </html>
