@@ -5,6 +5,28 @@
   };
 
   const navItems = document.querySelectorAll(".nav__item");
+  const layout = document.querySelector(".layout");
+  const menuToggle = document.getElementById("menuToggle");
+  const sidebarBackdrop = document.getElementById("sidebarBackdrop");
+  const mobileBreakpoint = window.matchMedia("(max-width: 860px)");
+
+  function setMenuExpanded(isOpen) {
+    if (menuToggle) menuToggle.setAttribute("aria-expanded", String(isOpen));
+  }
+
+  function openSidebar() {
+    if (!layout || !mobileBreakpoint.matches) return;
+    layout.classList.add("sidebar-open");
+    setMenuExpanded(true);
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeSidebar() {
+    if (!layout) return;
+    layout.classList.remove("sidebar-open");
+    setMenuExpanded(false);
+    document.body.style.overflow = els?.reviewOverlay?.style.display === "flex" ? "hidden" : "auto";
+  }
 
   function showPage(key) {
     Object.values(pages).forEach(p => p.classList.remove("is-visible"));
@@ -20,7 +42,32 @@
       const key = btn.dataset.page;
       if (!key || !pages[key]) return;
       showPage(key);
+      if (mobileBreakpoint.matches) closeSidebar();
     });
+  });
+
+  menuToggle?.addEventListener("click", () => {
+    if (layout?.classList.contains("sidebar-open")) {
+      closeSidebar();
+    } else {
+      openSidebar();
+    }
+  });
+
+  sidebarBackdrop?.addEventListener("click", closeSidebar);
+
+  mobileBreakpoint.addEventListener("change", (event) => {
+    if (!event.matches) {
+      if (layout) layout.classList.remove("sidebar-open");
+      setMenuExpanded(false);
+      document.body.style.overflow = els?.reviewOverlay?.style.display === "flex" ? "hidden" : "auto";
+    }
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && layout?.classList.contains("sidebar-open")) {
+      closeSidebar();
+    }
   });
 
   const data = [
@@ -188,7 +235,11 @@
   function closeReviewModal() {
     if (!els.reviewOverlay) return;
     els.reviewOverlay.style.display = "none";
-    document.body.style.overflow = "auto";
+    if (layout?.classList.contains("sidebar-open") && mobileBreakpoint.matches) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
   }
 
   function renderPager() {
