@@ -125,7 +125,7 @@ body{
   gap:10px;
 }
 
-/* ===== content ===== */
+
 .content{
   display:flex;
   flex-direction:column;
@@ -158,7 +158,7 @@ body{
   max-width: 1200px;
 }
 
-/* cards */
+
 .card{
   background: var(--card);
   border: 1px solid var(--line);
@@ -166,11 +166,11 @@ body{
   box-shadow: var(--shadow);
 }
 
-/* pages */
+
 .page{ display:none; }
 .page.is-visible{ display:block; }
 
-/* ===== page head ===== */
+
 .page-head{ margin-bottom: 14px; }
 .page-title{
   margin:0;
@@ -184,9 +184,9 @@ body{
   color: var(--muted);
 }
 
-/* ===== BLUE HOME: overview cards positions (2x2) ===== */
-/* === Overview Cards (SIDE BY SIDE like blue design) === */
-/* ===== 4 CARDS IN ONE ROW ===== */
+
+
+
 .overview-grid{
   display:grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -194,7 +194,7 @@ body{
   margin-bottom:22px;
 }
 
-/* ensure cards fill row evenly */
+
 .overview-card{
   width:100%;
   height:100%;
@@ -228,11 +228,11 @@ body{
   color: var(--muted);
 }
 .overview-card__icon{
-  color: var(--icon); /* uniform icon color */
+  color: var(--icon); 
   font-size: 18px;
 }
 
-/* ===== middle/bottom rows (two panels side-by-side like blue) ===== */
+
 .two-col{
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -247,36 +247,36 @@ body{
   justify-content:space-between;
   margin-bottom: 12px;
 }
-/* Make panel behave like a fixed height box with scrolling body */
+
 .panel--fixed{
   display:flex;
   flex-direction:column;
-  height: 330px;              /* adjust to match the other panel height */
-  padding: 16px;              /* keep your existing panel padding feel */
+  height: 330px;              
+  padding: 16px;              
 }
 
-/* Body area should take remaining space and scroll */
+
 .panel__body{
-  background: transparent;    /* or #fff if you want it solid */
+  background: transparent;    
   border-radius: 10px;
   flex: 1;
-  min-height: 0;              /* IMPORTANT for flex scrolling to work */
+  min-height: 0;              
 }
 
-/* Scroll enabled */
+
 .panel__body--scroll{
   overflow-y: auto;
   overflow-x: hidden;
-  padding-right: 6px;         /* prevents content clipping when scrollbar hidden */
+  padding-right: 6px;         
 }
 
-/* Hide scrollbar (Chrome/Edge/Safari) */
+
 .panel__body--scroll::-webkit-scrollbar{
   width: 0px;
   height: 0px;
 }
 
-/* Hide scrollbar (Firefox) */
+
 .panel__body--scroll{
   scrollbar-width: none;
 }
@@ -286,7 +286,7 @@ body{
   font-weight: 900;
 }
 
-/* performance bars */
+
 .bars{ display:flex; flex-direction:column; gap: 12px; }
 .bar__row{
   display:flex;
@@ -310,7 +310,7 @@ body{
   background: linear-gradient(90deg, var(--red1), var(--red2));
 }
 
-/* champions (top card) */
+
 .champion-top{
   display:flex;
   align-items:center;
@@ -379,7 +379,7 @@ body{
   padding: 6px 10px;
 }
 
-/* rank list (bottom right) */
+
 .rank-list{
   display:flex;
   flex-direction:column;
@@ -407,7 +407,7 @@ body{
 .rank-item__sub{ font-weight: 700; font-size: 12px; color: var(--muted); margin-top:2px; }
 .rank-item__right{ font-weight: 900; }
 
-/* empty page */
+
 .empty{
   padding: 60px 18px;
   text-align:center;
@@ -427,9 +427,7 @@ body{
   font-weight: 600;
 }
 
-/* ===========================
-   Submissions Page
-=========================== */
+
 
 .submissions-summary{
   display:grid;
@@ -470,7 +468,7 @@ body{
   font-size: 18px;
 }
 
-/* filter bar */
+
 .filterbar{
   padding: 12px;
   margin-bottom: 16px;
@@ -509,7 +507,7 @@ body{
   padding: 12px 0;
 }
 
-/* buttons */
+
 .btn{
   border-radius: 10px;
   padding: 12px 14px;
@@ -531,7 +529,7 @@ body{
   color:#111;
 }
 
-/* table card */
+
 .table-card{
   padding: 0;
   overflow:hidden;
@@ -551,7 +549,7 @@ body{
   overflow:auto;
 }
 
-/* hide scrollbars in table area (optional) */
+
 .table-wrap::-webkit-scrollbar{ width:0; height:0; }
 .table-wrap{ scrollbar-width:none; }
 
@@ -654,18 +652,18 @@ body{
   border-color: rgba(229,57,53,.30);
 }
 
-/* responsive */
+
 @media (max-width: 1100px){
   .submissions-summary{ grid-template-columns: 1fr; }
   .filterbar__row{
     grid-template-columns: 1fr 1fr;
   }
 }
-/* responsive */
+
 @media (max-width: 1100px){
   .two-col{ grid-template-columns: 1fr; }
 }
-/* Only stack on SMALL screens */
+
 @media (max-width: 700px){
   .overview-grid{
     grid-template-columns: 1fr;
@@ -676,7 +674,7 @@ body{
   .main{ padding: 18px; }
 }
 
-/* reviewed submission modal */
+
 .review-overlay {
   position: fixed;
   inset: 0;
